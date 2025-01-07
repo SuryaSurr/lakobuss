@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    </head>
+    <body class="bg-secondary">
+        <!--navbar-->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-md-flex p-4">
+                <div class="container">
+                    <style>
+                    @keyframes slideIn {
+                        from {
+                            transform: translateX(-100%);
+                        }
+                        to {
+                            transform: translateX(0);
+                        }
+                    }
+                    @keyframes slideDown {
+                        from {
+                            transform: translateY(-100%);
+                        }
+                        to {
+                            transform: translateY(0);
+                        }
+                    }
+                    @keyframes fadeeIn {
+                        from {
+                            opacity: 0;
+                        }
+                        to {
+                            opacity: 1;
+                        }
+                    }
+                    @keyframes runing {
+                        from{
+                            transform: translateX(0);
+                        }
+                        to {
+                            transform: translateX(-100%);
+                        }
+                    }
+                    @keyframes appear {
+                        from {
+                            opacity: 0;
+                            scale: 0.5;
+                        }
+                        to {
+                            opacity: 1;
+                            scale: 1;
+                        }
+                    }
+                    .scroll {
+                        animation: appear linear;
+                        animation-timeline: view();
+                        animation-range: entry 0 cover 30%;
+                    }
+                    .Logo {
+                        animation: slideIn 1s ease-out;
+                    }
+                    .slideDown {
+                        animation: slideDown 1s ease-out;
+                    }
+                    .fade-in {
+                        animation: fadeeIn 1s ease-out;
+                    }
+                    .dropdown{
+                        position: relative;
+                        display: inline-block;
+                    }
+                    .dropdown-button{
+                        background-color: cadetblue;
+                        color: white;
+                        padding: 10px 20px;
+                        font-size: 14px;
+                        border: none;
+                        cursor: pointer;
+                        border-radius: 5px;
+                        margin-left: auto;
+                    }
+                    .dropdown-menu {
+                        display: none;
+                        position: absolute;
+                        background-color: white;
+                        min-width: 150px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                        border-radius: 5px;
+                        z-index: 1;
+                    }
+                    .dropdown-menu a {
+                    color: black;
+                    padding: 10px 15px;
+                    text-decoration: none;
+                    display: block;
+                    }
+                    .dropdown-menu a:hover {
+                    background-color: #f1f1f1;
+                    }
+                    .dropdown.show .dropdown-menu {
+                    display: block;
+                    }
+                    
+                    .runing{
+                        overflow: hidden;
+                        white-space: nowrap;
+                        box-sizing: border-box;
+                    }
+                    .runing span {
+                        display: inline-block;
+                        padding-left: 100%;
+                        animation: runing 20s linear infinite;
+                    }
+                </style>
+                <img class="Logo" src="IMAGE/pngimg.com - letter_L_PNG114.png" width="50" alt="Logo">
+                <a class="navbar-brand slideDown" href="index.html"><b>AKO<span style="color: cadetblue;">BUS</span></b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item mx-md-3">
+                                <a class="nav-link active" aria-current="false" id="navbarDropdownMenuLink" 
+                                role="button" href="aboutus.html">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <nav class="navbar navbar-expand-lg" style="background-color: darkslategrey">
+                    <div class="container">
+                        <div class="dropdown">
+                            <button class="dropdown-button" onclick="toggleDropdown()">MODS ➞</button>
+                                <div class="dropdown-menu">
+                                    <a href="vehicle.html">VEHICLE</a>
+                                    <a href="tools.html">TOOLS</a>
+                                </div>
+                                <script>
+                                    function toggleDropdown() {
+                                        const dropdown = document.querySelector('.dropdown');
+                                        dropdown.classList.toggle('show');
+                                    }
+                                    window.addEventListener('click', function (event) {
+                                        const dropdown = document.querySelector('.dropdown');
+                                        if (!dropdown.contains(event.target)) {
+                                        dropdown.classList.remove('show');
+                                    }
+                                    });
+                                </script>
+                        </div>
+                    <div class="d-flex  align-content-center justify-content-end">
+                            <form class="d-flex justify-content-end" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-primary" type="submit">Search</button>
+                            </form>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHome" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+            </nav>
+        </header>
+        <div class="banner">
+            <img class="img-fluid fade-in" id="imager" src="IMAGE/Header.png" width="100%" height="400"  style="object-fit: cover;" alt="Header Image">
+        </div>
+        <div class="bg-dark text-white p-3 runing">
+            <span>Selamat datang di website kami! Temukan berbagai fitur menarik hanya di sini. Nikmati pengalaman terbaik bersama kami!</span>
+        </div>
+        <!--NavBar End-->
+        
+        <!--catalog-->
+            <div class="container border mb-2 mt-2 rounded-3 shadow bg-white">
+                <!--menu-->
+                <h3 class="text-center">Our Mods</h3>
+                <div class="text-center w-50 mx-auto fw-light">Mods will be coming soon</div>
+                    <div class="scroll">
+                        <div class="row row-cols-md-3 row-cols-2 gx-5 p-5">
+                            <div class="col mb-5">
+                                <div class="card shadow">
+                                    <img src="https://img.gta5-mods.com/q95/images/annis-zr-350-improved/b41458-1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Annis ZR-350 Improved [Add-On | Tuning | LODs] 1.0</p>
+                                    </div>
+                                    <div class="d-none deskripsi"><p>A full changelog is included below.
+                                        Features:
+                                        - Supports all features of the game (LOD, breaking glass, dirt, burnt texture etc.)
+                                        - Small redesigns around the whole vehicle
+                                        - New tuning parts
+                                        - New headlight assembly with DRLs and indicators in the bumper
+                                        - Various mesh improvements
+                                        - All new parts are quadded, weighted & vertex color matched to the original model
+                                        - Template included in files</p></div>
+                                    <div class="card-footer d-md-flex">
+                                        <a class="btn btn-sm btn-primary d-block btnDetail">Detail</a>
+                                        <span class="ms-auto text-danger fw-bold d-block text-center harga">Rp 155.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="card shadow">
+                                    <img src="https://img.gta5-mods.com/q95/images/bugatti-tourbillon-2025-add-on-replace-tuning-active-spoiler-template-fivem/9d6547-8.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Bugatti Tourbillon 2025 [Add-On / Replace | Active Spoiler | FiveM] v1.0</p></p>
+                                    </div>
+                                    <div class="card-footer d-md-flex">
+                                        <a class="btn btn-sm btn-primary d-block btnDetail">Detail</a>
+                                        <span class="ms-auto text-danger fw-bold d-block text-center harga">Rp 152.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="card shadow">
+                                    <img src="https://img.gta5-mods.com/q95/images/cadillac-escalade-2015-add-on-locked/273ec9-20241222171108_1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Cadillac Escalade 2015 
+                                            <br>[Add-On] v2</br></p>
+                                    </div>
+                                    <div class="card-footer d-md-flex">
+                                        <a class="btn btn-sm btn-primary d-block btnDetail">Detail</a>
+                                        <span class="ms-auto text-danger fw-bold d-block text-center harga">Rp 153.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="card shadow">
+                                    <img src="https://img.gta5-mods.com/q95/images/gta-v-script-tutor/efa992-x.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">GTA V Script Tutor - Experimental Version - Peds Only</p>
+                                    </div>
+                                    <div class="card-footer d-md-flex">
+                                        <a class="btn btn-sm btn-primary d-block btnDetail">Detail</a>
+                                        <span class="ms-auto text-danger fw-bold d-block text-center harga">Rp 158.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="card shadow">
+                                    <img src="https://img.gta5-mods.com/q95/images/vehicles-meta-lines-updates-_ange92off/cbdf3c-1-2.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Vehicles .META Files Updates 1.70 [1.0.3411.0] [ALPHA]</p>
+                                    </div>
+                                    <div class="card-footer d-md-flex">
+                                        <a class="btn btn-sm btn-primary d-block btnDetail">Detail</a>
+                                        <span class="ms-auto text-danger fw-bold d-block text-center harga">Rp 157.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="card shadow">
+                                    <img src="https://img.gta5-mods.com/q95/images/handling-controller/006aee-Preview.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Handling Controller 2.0.8</p>
+                                    </div>
+                                    <div class="card-footer d-md-flex">
+                                        <a class="btn btn-sm btn-primary d-block btnDetail">Detail</a>
+                                        <span class="ms-auto text-danger fw-bold d-block text-center harga">Rp 156.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        <!--Footer-->
+        <footer class="text-white mb-3" style="background-color: rgb(75, 75, 75);">
+            <div class="container">
+            <div class="row p-3">
+                <div class="col-sm-8 col-xxl-9">
+                <div class="mb-3">
+                    <a class="m-3 text-white" href="https://www.instagram.com/_suurr">@_suurr</a>
+                </div>
+                <div>
+                    <a class="m-3 text-white" href="https://wa.me/6288292089835">+6288292089835</a>
+                </div>
+                </div>
+    
+                
+            </div>
+            </div>
+    
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2024 Copyright: Surya Prabudana 088292099835
+            </div>
+        </footer>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary d-none btnModal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Launch demo modal
+        </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 modalTittle" id="exampleModalLabel"></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body row">
+                        <div class="modalImage col-md-6 col-12"></div>
+                        <div class="col-md-6 col-12 ">
+                            <div class="modalDeskripsi"></div>
+                            <div class="d-md-flex">
+                                <a href="" class="btn btn-sm btn-warning d-bloxk btnBeli">Beli Mods</a>
+                                <span class="ms-auto text-danger fw-bold d-block text-center modalHarga">Rp 155.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
